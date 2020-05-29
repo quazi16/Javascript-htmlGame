@@ -1,0 +1,480 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Pages */
+body, a {
+	font-weight: bold;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 20px;
+    color: #e8b856;
+    text-shadow: #000 2px 2px 5px;
+    font-family: 'Droid Serif', serif;
+}
+
+a {
+	text-decoration: none;
+}
+
+body {
+	margin: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+#welcome p.small {
+    font-size: 10px;
+    line-height: 14px;
+}
+
+#wrapper {
+	position: relative;
+	z-index: 1;
+	height: 100%;
+	padding-top: 80px;
+}
+
+.gameBoard {
+	width: 1000px;
+	height: 450px;
+	margin: 0 auto;
+	position: relative;
+}
+
+
+.dragBoard, .targetBoard  {
+	width: 450px;
+	height: 450px;
+	top: 0;
+	position: absolute;
+}
+
+.dragBoard  {
+	left: 0;
+}
+
+.targetBoard  {
+	right: 0;
+}
+
+.instruction {
+	width: 450px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.celebrate, .playAgain {
+	cursor: pointer;
+}
+
+body, p, img, div {
+  -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+     -khtml-user-select: none; /* Konqueror */
+       -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  not supported by any browser */
+}
+
+#welcome {
+	position: absolute;
+	bottom: 20%;
+	width: 100%;
+	text-align: center;
+	z-index: 2;
+}
+
+#welcome p {
+	font-size: 26px;
+	line-height: 36px;
+}
+
+#startGame {
+	cursor: pointer;
+}
+
+.target {
+	background: #000;
+	width: 90px;
+	height: 90px;
+	box-shadow: inset 0 0 5px #f4cd92;
+}
+
+.modal {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0, .9);
+    top: 0;
+    left: 0;
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.image {
+	width: 90px;
+	height: 90px;
+}
+
+.image, .popup, #welcome {
+	opacity: 0;
+	visibility: hidden;
+}
+
+.popup {
+    position: absolute;
+    z-index: 4;
+    top: 50%;
+    text-align: center;
+    width: 100%;
+}
+
+.correct {
+
+}
+
+.wrong {
+	color: #a30e00;
+}
+
+.dragItem {
+	float: left;
+}
+
+.columnOne {
+	position: absolute;
+	left: 0;
+}
+
+.columnTwo {
+	position: absolute;
+	left: 90px;
+}
+
+.columnThree {
+	position: absolute;
+	left: 180px;
+}
+
+.columnFour {
+	position: absolute;
+	left: 270px;
+}
+
+.columnFive {
+	position: absolute;
+	left: 360px;
+}
+
+.rowOne {
+	position: absolute;
+	top: 0px;
+}
+
+.rowTwo {
+	position: absolute;
+	top: 90px;
+}
+
+.rowThree {
+	position: absolute;
+	top: 180px;
+}
+
+.rowFour {
+	position: absolute;
+	top: 270px;
+}
+
+.rowFive {
+	position: absolute;
+	top: 360px;
+}
+
+/* FOURBOARD */
+
+.gameBoard.fourBoard {
+	width: 700px;
+	height: 300px;
+}
+
+.fourBoard .dragBoard, .fourBoard .targetBoard  {
+	width: 300px;
+	height: 300px;
+}
+
+.fourBoard .columnTwo {
+	left: 150px;
+}
+
+.fourBoard .rowTwo {
+	top: 150px;
+}
+
+.fourBoard .image {
+	width: 150px;
+	height: 150px;
+}
+
+/* NINE BOARD */
+.gameBoard.nineBoard {
+	width: 820px;
+	height: 360px;
+}
+
+.nineBoard .dragBoard, .nineBoard .targetBoard  {
+	width: 360px;
+	height: 360px;
+}
+
+.nineBoard .columnTwo {
+	left: 120px;
+}
+
+.nineBoard .columnThree {
+	left: 240px;
+}
+
+.nineBoard .rowTwo {
+	top: 120px;
+}
+
+.nineBoard .rowThree {
+	top: 240px;
+}
+
+.nineBoard .image {
+	width: 120px;
+	height: 120px;
+}
+
+/* SIXTEEN BOARD */
+.gameBoard.sixteenBoard {
+    width: 900px;
+    height: 400px;
+}
+
+.sixteenBoard .dragBoard, .sixteenBoard .targetBoard  {
+    width: 400px;
+    height: 400px;
+}
+
+.sixteenBoard .columnTwo {
+    left: 100px;
+}
+
+.sixteenBoard .columnThree {
+    left: 200px;
+}
+
+.sixteenBoard .columnFour {
+    left: 300px;
+}
+
+.sixteenBoard .rowTwo {
+    top: 100px;
+}
+
+.sixteenBoard .rowThree {
+    top: 200px;
+}
+
+.sixteenBoard .rowFour {
+    top: 300px;
+}
+
+.sixteenBoard .image {
+    width: 100px;
+    height: 100px;
+}
+
+/* PRE LOADER */
+#loader-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+}
+#loader {
+    display: block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 150px;
+    height: 150px;
+    margin: -75px 0 0 -75px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #b93800;
+
+    -webkit-animation: spin 2s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 2s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+
+    z-index: 1001;
+}
+
+#loader:before {
+    content: "";
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    right: 5px;
+    bottom: 5px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #760b00;
+
+    -webkit-animation: spin 3s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+    animation: spin 3s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+#loader:after {
+    content: "";
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    border-top-color: #ae8a72;
+
+    -webkit-animation: spin 1.5s linear infinite; /* Chrome, Opera 15+, Safari 5+ */
+      animation: spin 1.5s linear infinite; /* Chrome, Firefox 16+, IE 10+, Opera */
+}
+
+@-webkit-keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+@keyframes spin {
+    0%   {
+        -webkit-transform: rotate(0deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(0deg);  /* IE 9 */
+        transform: rotate(0deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+    100% {
+        -webkit-transform: rotate(360deg);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: rotate(360deg);  /* IE 9 */
+        transform: rotate(360deg);  /* Firefox 16+, IE 10+, Opera */
+    }
+}
+
+#loader-wrapper .loader-section {
+    position: fixed;
+    top: 0;
+    width: 51%;
+    height: 100%;
+    background: #222222;
+    z-index: 1000;
+    -webkit-transform: translateX(0);  /* Chrome, Opera 15+, Safari 3.1+ */
+    -ms-transform: translateX(0);  /* IE 9 */
+    transform: translateX(0);  /* Firefox 16+, IE 10+, Opera */
+}
+
+#loader-wrapper .loader-section.section-left {
+    left: 0;
+}
+
+#loader-wrapper .loader-section.section-right {
+    right: 0;
+}
+
+/* Loaded */
+.loaded #loader-wrapper .loader-section.section-left {
+    -webkit-transform: translateX(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(-100%);  /* IE 9 */
+            transform: translateX(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+    -webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+            transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader-wrapper .loader-section.section-right {
+    -webkit-transform: translateX(100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateX(100%);  /* IE 9 */
+            transform: translateX(100%);  /* Firefox 16+, IE 10+, Opera */
+
+-webkit-transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+    transition: all 0.7s 0.3s cubic-bezier(0.645, 0.045, 0.355, 1.000);
+}
+
+.loaded #loader {
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+            transition: all 0.3s ease-out;
+}
+.loaded #loader-wrapper {
+    visibility: hidden;
+
+    -webkit-transform: translateY(-100%);  /* Chrome, Opera 15+, Safari 3.1+ */
+        -ms-transform: translateY(-100%);  /* IE 9 */
+            transform: translateY(-100%);  /* Firefox 16+, IE 10+, Opera */
+
+    -webkit-transition: all 0.3s 1s ease-out;
+            transition: all 0.3s 1s ease-out;
+}
